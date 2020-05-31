@@ -25,6 +25,13 @@ class DB{
         $sql = "INSERT INTO users (email, password) VALUES('$email', '$password')";
         $this->conn->query($sql);
     }
+
+    function Login($email){
+        $sql = "SELECT * FROM `users` WHERE email = '$email'";
+        $result = $this->conn->query($sql);
+        $data = mysqli_fetch_assoc($result);
+        return $data;
+    }
  
     function __destruct(){
         $this->conn->close();

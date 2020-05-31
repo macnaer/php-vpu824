@@ -14,3 +14,15 @@
 </head>
 
 <body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <?php if (!empty($_SESSION)){
+                    if(isset($_SESSION["email"])){
+                        echo "<h2>" . $_SESSION["email"] . "<a href='logout.php'>Logout</a>" . "</h2>" ;
+                    }
+                }
+                ?>
+            </div>
+        </div>
+    </div>

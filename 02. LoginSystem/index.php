@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once "./DbManager.php";
 $db = new DB();
 
@@ -22,7 +23,12 @@ if (!empty($_POST)){
 }
 
 require_once "./views/header.html";
-require_once "./views/main.html";
+if ($message == "Register success"){
+    require_once "./views/login.html";
+}
+else{
+    require_once "./views/main.html";
+}
 require_once "./views/footer.html";
 
 ?>
